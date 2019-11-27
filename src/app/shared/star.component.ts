@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, OnChanges, Input } from '@angular/core';
 
 @Component({
     selector: 'pm-star',
@@ -7,10 +7,11 @@ import { Component, OnChanges } from '@angular/core';
 })
 
 export class StarComponent implements OnChanges {
-    rating: number = 4;
+    @Input() rating: number;
     starWidth: number;
 
+    // We use the OnChanges lifecycle hook to perform any action after Angular sets data bound input properties
     ngOnChanges(): void {
-        this.starWidth = this.rating * 75 /5;
+        this.starWidth = this.rating * 75 / 5;
     }
 }
