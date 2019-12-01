@@ -7,12 +7,11 @@ export interface IProduct {
     description: string;
     starRating: number;
     imageUrl: string;
+    // calculateDiscount(percent: number): number;
 }
 
-// We only create a business object class if that class provides some functionality that we want to use throughout our application
-// (such as this calculateDiscount method)
-
-/*export class Product implements IProduct {
+/*
+export class Product implements IProduct {
 
     constructor(public productId: number,
                 public productName: string,
@@ -26,4 +25,5 @@ export interface IProduct {
     calculateDiscount(percent: number): number {
         return this.price - (this.price * percent / 100);
     }
-}*/
+}
+*/
