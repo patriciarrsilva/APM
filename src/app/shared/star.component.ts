@@ -11,7 +11,6 @@ export class StarComponent implements OnChanges {
     starWidth: number;
     @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
 
-    // We use the OnChanges lifecycle hook to perform any action after Angular sets data bound input properties
     ngOnChanges(): void {
         this.starWidth = this.rating * 75 / 5;
     }
