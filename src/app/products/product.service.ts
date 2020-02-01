@@ -21,7 +21,6 @@ export class ProductService {
       );
   }
 
-  // When a member is marked private, it cannot be accessed from outside of its containing class
   private handleError(err: HttpErrorResponse) {
     // In a real world app, we may send the server to some remote logging infrastructure instead of just logging it to the console
     let errorMessage = '';
