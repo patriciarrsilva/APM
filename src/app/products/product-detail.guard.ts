@@ -12,16 +12,17 @@ export class ProductDetailGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    console.log('next: ', next);
-    console.log('state: ', state);
-    let id = +next.url[1].path;
+
+    const id = +next.url[1].path;
+
     if (isNaN(id) || id < 1) {
       // in a real app, route to an error page and provide a button to navigate back
       alert("Invalid product Id");
       this.router.navigate(['/products']);
+
       return false;
     }
+
     return true;
   }
-
 }
