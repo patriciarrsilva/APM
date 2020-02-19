@@ -17,9 +17,8 @@ export class ProductDetailGuard implements CanActivate {
     const id = +next.url[1].path;
 
     if (isNaN(id) || id < 1) {
-      // in a real app, route to an error page and provide a button to navigate back
-      alert("Invalid product Id");
-      this.router.navigate(['/products']);
+      alert('Invalid product Id');
+      this.router.navigate(['/404']);
 
       return false;
     }
